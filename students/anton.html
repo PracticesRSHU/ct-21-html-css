@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Anton Yanyshchuk - Profile</title>
+  <link rel="stylesheet" href="../css/student-page-styles.css">
+  <link rel="icon" href="../img/favicon.png" type="image/x-icon">
+</head>
+<body>
+
+<header>
+  <div class="back-button">
+    <a href="../index.html">← Back to Home</a>
+  </div>
+  <h1>Anton Yanyshchuk</h1>
+  <p>Full Stack Developer | Cool Coder🗿</p>
+</header>
+
+<div class="container">
+  <div class="bio-section">
+    <img src="../img/students/Toha229/Toha229.jpg" alt="Alice Photo" />
+    <h2>About Anton</h2>
+    <p>
+      Anton is a passionate full stack developer with a love for creating different projects. He specializes in React, ASP.NET, and loves making great API. In his free time, Anton enjoys cycling, gaming, gym and working on personal coding projects.
+    </p>
+  </div>
+
+  <div class="carousel">
+    <div class="carousel-images" id="carouselImages">
+      <img src="../img/students/Toha229/anton1.jpg" alt="Anton 1">
+      <img src="../img/students/Toha229/anton2.jpg" alt="Anton 2">
+      <img src="../img/students/Toha229/anton3.jpg" alt="Anton 3">
+    </div>
+    <div class="carousel-buttons">
+      <button onclick="prevSlide()">&#8592;</button>
+      <button onclick="nextSlide()">&#8594;</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.carousel-images img');
+  const totalSlides = slides.length;
+
+  function showSlide(index) {
+    const carousel = document.getElementById('carouselImages');
+    if (index >= totalSlides) currentSlide = 0;
+    else if (index < 0) currentSlide = totalSlides - 1;
+    else currentSlide = index;
+
+    carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
+  }
+
+  function nextSlide() {
+    showSlide(currentSlide + 1);
+  }
+
+  function prevSlide() {
+    showSlide(currentSlide - 1);
+  }
+</script>
+
+</body>
+</html>
